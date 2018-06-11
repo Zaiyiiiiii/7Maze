@@ -4,20 +4,19 @@ import HelloWorld from "@/components/HelloWorld"
 import Level from "@/components/Level"
 
 Vue.use(Router)
-
 export default new Router({
-  mode: "history",
-  routes: [
-    {
-      path: "/",
-      name: "index",
-      redirect: "/0"
-    },
-    {
-      path: "/:key",
-      name: "Levels",
-      component: Level,
-      props: true
-    }
-  ]
+    mode: "history",
+    routes: [
+        {
+            path: "/",
+            name: "index",
+            redirect: "/0"
+        },
+        {
+            path: "/:key",
+            name: "Levels",
+            component: Level,
+            props: true
+        }
+    ]
 })

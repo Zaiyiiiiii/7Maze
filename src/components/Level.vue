@@ -1,6 +1,6 @@
 <template>
     <div class="level">
-        <div v-for="part in level" v-if="level">
+        <div v-for="(part,index) in level" :key="index" v-if="level">
             <div v-if="part.type == 'text'">
                 {{part.context}}
             </div>
