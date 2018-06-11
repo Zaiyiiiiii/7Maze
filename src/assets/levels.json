@@ -1,0 +1,22 @@
+{
+    "0":[
+        {
+            "type": "link",
+            "context": "/1"
+        },
+        {
+            "type": "flash",
+            "context": "/static/7maze.swf"
+        }
+    ],
+    "1":[
+        {
+            "type": "text",
+            "context":"这一页的网址是：1"
+        },
+        {
+            "type": "text",
+            "context":"下一页的网址是……"
+        }
+    ]
+}
