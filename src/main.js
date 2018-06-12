@@ -9,8 +9,10 @@ router.beforeEach((to, from, next) => {
     let mosaic = document.querySelector(".mosaic")
     if (mosaic) {
         mosaic.style.opacity = "1"
+        document.body.className = "shake"
         setTimeout(() => {
             mosaic.style.opacity = "0"
+            document.body.className = ""
             next()
         }, 300)
     }

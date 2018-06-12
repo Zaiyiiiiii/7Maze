@@ -1,27 +1,67 @@
 <template>
     <div class="level">
-        <div v-for="(part,index) in level" :key="index" v-if="level">
-            <div v-if="part.type == 'text'">
+        <div class="levelpart" v-for="(part,index) in level" :key="index" v-if="level">
+            <div v-if="part.type == 'text'" :style="part.color?('color:'+part.color):''">
                 {{part.context}}
             </div>
+            <div v-if="part.type=='image'">
+                <img :src="part.path" alt="">
+            </div>
+            <div v-if="part.type == 'flash'">
+                <object type="application/x-shockwave-flash" data="static/7maze.swf" width="500" height="400">
+                    <param name="movie" value="static/7maze.swf" />
+                    <param name="quality" value="high" />
+                </object>
+            </div>
+            <div v-if="part.type == 'netease'">
+                <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 :src="'//music.163.com/outchain/player?type=2&id='+part.id+'&auto=1&height=66'"></iframe>
+
+            </div>
         </div>
-        <div v-if="!level" @click="$router.go(-1)">
-            {{"返回"}}
+        <div v-show="!level" @click="$router.go(-1)">
+            <div>You Are Lost.</div>
+            <div style="color: rgb(155, 32, 32)">你走错了，点这里回到上一关。</div>
+            <div ref="words" style="height:2em;">
+            </div>
         </div>
-        <div class="door">
-            <input v-model="key" placeholder="GiveYourAnswer" class="keyhole" type="text">
+        <div class="door" v-if="level">
+            <input v-model="key" :placeholder="levelName=='0'?'点这里，填入 “ 1 ”':'GiveYourAnswer'" class="keyhole" type="text">
             <transition name="fade">
-                <div @click="checkAnswer" v-if="key" class="fuckkeyhole">Check</div>
+                <background :str="level?(level[0].type=='text'?level[0].context:undefined):undefined" class="level-background"></background>
             </transition>
+            <div @click="checkAnswer" :style="key?'':'opacity:0!important;cursor:initial!important;'" class="fuckkeyhole">Check</div>
         </div>
     </div>
 </template>
 <script>
+    import Background from "./Background.vue"
     import levels from "../assets/levels.json"
+    import words from "../assets/words.json"
+    import random from "random-seed"
+    import Typed from "typed.js"
     export default {
+        components: {
+            "background": Background
+        },
+        watch: {
+            levelName() {
+                scrollTo(0, 0)
+                if (this.type) {
+                    this.type.stop()
+                    this.type.destroy()
+                }
+                this.type = undefined
+                if (!this.level) {
+                    setTimeout(() => {
+                        this.createWords()
+                    }, 200)
+                }
+            }
+        },
         data() {
             return {
-                key: undefined
+                key: undefined,
+                type: undefined
             }
         },
         computed: {
@@ -36,15 +76,35 @@
             },
             levels() {
                 return levels
+            },
+            words() {
+                return words || []
+            },
+            createWords() {
+                this.type = new Typed(this.$refs.words, {
+                    strings: words[this.random()],
+                    typeSpeed: 50,
+                    backSpeed: 2,
+                    backDelay: 1000,
+                    fadeOut: true,
+                    loop: true,
+                    showCursor: false
+                })
             }
         },
-        methods:{
-            checkAnswer(){
-                this.$router.push(this.key)
+        methods: {
+            checkAnswer() {
+                this.$router.push(this.key.toLowerCase())
+            },
+            random() {
+                return random.create(this.levelName).intBetween(0, words.length - 1)
             }
         },
         mounted() {
             console.log(this)
+            if (!this.level) {
+                this.createWords()
+            }
         }
     }
 </script>
@@ -53,12 +113,22 @@
         font-family: Cinzel;
         src: url("../assets/Cinzel-Regular.ttf");
     }
+    .level-background {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0;
+        transition: all 1s;
+    }
     .level * {
         box-sizing: border-box;
     }
     .level {
         width: 50%;
-        height: 100%;
+        min-height: 100%;
         min-width: 300px;
         color: #fff;
         font-family: Cinzel, 仿宋, 宋体;
@@ -66,6 +136,9 @@
         line-height: 2.25em;
         padding-top: 4em;
         margin: auto;
+        padding-bottom: 2em;
+    }
+    .levelpart {
     }
     .door {
         margin-top: 2em;
@@ -86,7 +159,7 @@
         box-sizing: border-box;
         border: none;
         outline: none;
-        background: #000;
+        background: rgba(0, 0, 0, 0);
         padding: 0.45em;
         padding-left: 1em;
         height: 2em;
@@ -98,6 +171,12 @@
     .keyhole:focus {
         background: #fff;
         color: #009933;
+    }
+    .keyhole:focus + .level-background {
+        opacity: 1;
+    }
+    .keyhole:focus + .level-background + .fuckkeyhole {
+        opacity: 0.3 !important;
     }
     .door .keyhole::-webkit-input-placeholder {
         color: #fff;
@@ -116,7 +195,7 @@
         opacity: 0.3;
     }
     .keyhole:focus + .fuckkeyhole {
-        opacity: 0.5
+        opacity: 0.5;
     }
 </style>
 

@@ -14,6 +14,10 @@
 </script>
 
 <style>
+    @import url("csshake/dist/csshake.min.css");
+    body {
+        background: #000;
+    }
     body,
     html,
     #app {
@@ -21,10 +25,11 @@
         height: 100%;
         margin: 0;
         padding: 0;
-        background: #000;
     }
-
-    .mosaic{
+    .shake {
+        animation: shake-opacity 0.5s ease-in-out 2;
+    }
+    .mosaic {
         opacity: 0;
         position: fixed;
         height: 100%;

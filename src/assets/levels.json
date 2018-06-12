@@ -1,22 +1,254 @@
 {
-    "0":[
-        {
-            "type": "link",
-            "context": "/1"
-        },
-        {
-            "type": "flash",
-            "context": "/static/7maze.swf"
-        }
-    ],
-    "1":[
-        {
-            "type": "text",
-            "context":"这一页的网址是：1"
-        },
-        {
-            "type": "text",
-            "context":"下一页的网址是……"
-        }
-    ]
+  "0": [
+    {
+      "type": "flash",
+      "context": "/static/7maze.swf"
+    },
+    {}
+  ],
+  "1": [
+    {
+      "type": "text",
+      "context": "这一页的网址是：1"
+    },
+    {
+      "type": "text",
+      "context": "下一页的网址是……"
+    }
+  ],
+  "2": [
+    {
+      "type": "text",
+      "context": "看来你已经进入状况了"
+    },
+    {
+      "type": "text",
+      "context": "不过不要得意得太早"
+    },
+    {
+      "type": "text",
+      "context": "这不过是INSTRUCTION而已"
+    },
+    {
+      "type": "text",
+      "context": "至于第三个是……"
+    }
+  ],
+  "s": [
+    {
+      "type": "text",
+      "context": "1 1 2 3 5 _"
+    }
+  ],
+  "8": [
+    {
+      "type": "text",
+      "context": "57 59 55 63 47 __"
+    }
+  ],
+  "79": [
+    {
+      "type": "text",
+      "context": "翻转吧"
+    }
+  ],
+  "97": [
+    {
+      "type": "text",
+      "context": "－．－－"
+    },
+    {
+      "type": "text",
+      "context": "－－－"
+    },
+    {
+      "type": "text",
+      "context": "．．－"
+    },
+    {
+      "type": "text",
+      "context": "－"
+    },
+    {
+      "type": "text",
+      "context": "．．．．"
+    }
+  ],
+  "youth": [
+    {
+      "type": "text",
+      "context": "一闪一闪亮晶晶 ♪"
+    }
+  ],
+  "1155665": [
+    {
+      "type": "text",
+      "context": "没有人能自全"
+    },
+    {
+      "type": "text",
+      "context": "没有人是孤岛"
+    },
+    {
+      "type": "text",
+      "context": "每人都是大陆的一片"
+    },
+    {
+      "type": "text",
+      "context": "要为本土应卯"
+    },
+    {
+      "type": "text",
+      "context": "那便是一块土地"
+    },
+    {
+      "type": "text",
+      "context": "那便是一方海角"
+    },
+    {
+      "type": "text",
+      "context": "那便是一座庄园"
+    },
+    {
+      "type": "text",
+      "context": "不论是你的、还是朋友的"
+    },
+    {
+      "type": "text",
+      "context": "一旦海水冲走"
+    },
+    {
+      "type": "text",
+      "context": "欧洲就要变小"
+    },
+    {
+      "type": "text",
+      "context": "任何人的死亡"
+    },
+    {
+      "type": "text",
+      "context": "都是我的减少"
+    },
+    {
+      "type": "text",
+      "context": "作为人类的一员"
+    },
+    {
+      "type": "text",
+      "context": "我与生灵共老"
+    },
+    {
+      "type": "text",
+      "context": "丧钟在为谁敲"
+    },
+    {
+      "type": "text",
+      "context": "我本茫然不晓"
+    },
+    {
+      "type": "text",
+      "context": "不为幽明永隔"
+    },
+    {
+      "type": "text",
+      "context": "它正为你哀悼"
+    }
+  ],
+  "bell": [
+    {
+      "type": "text",
+      "context": "下一个地址是：179"
+    },
+    {
+      "type": "text",
+      "context": "dynamite",
+      "color": "transparent"
+    }
+  ],
+  "179": [
+    {
+      "type": "text",
+      "context": "真实总是会被假象所蒙蔽"
+    }
+  ],
+  "dynamite": [
+    {
+      "type": "text",
+      "context": "3　5　12　12　16　8　15　14　5"
+    }
+  ],
+  "cellphone": [
+    {
+      "type": "text",
+      "context": "2244477784432999"
+    }
+  ],
+  "birthday": [
+    {
+      "type": "text",
+      "context": "1:58"
+    }
+  ],
+  "222": [
+    {
+      "type": "image",
+      "path": "/static/222.gif"
+    }
+  ],
+  "passion": [
+    {
+      "type": "netease",
+      "id": 18795421
+    },
+    {
+      "type": "text",
+      "context": "答案定格在 2018.6.12 17:18"
+    }
+  ],
+  "1218": [
+    {
+      "type": "text",
+      "context": "欲语无言上西楼"
+    }
+  ],
+  "梧": [
+    {
+      "type": "text",
+      "context": "唐诗　胡茄　竹林"
+    }
+  ],
+  "300187": [
+    {
+      "type": "text",
+      "context": "当在天愿作比翼鸟，在地愿为连理枝"
+    }
+  ],
+  "0707": [
+    {
+      "type": "text",
+      "context": "当月亮变成了太阳"
+    }
+  ],
+  "0817": [
+    {
+      "type": "text",
+      "context": "当方向出现了颜色"
+    }
+  ],
+  "bluewhiteredblack": [
+      {
+          "type": "text",
+          "context": "1)373[71\\/32 "
+      }
+  ],
+  "detectivez": [
+      {
+          "type": "text",
+          "context": "116.422145"
+      },
+      {
+          "type": "text",
+          "context": "39.907145"
+      }
+  ]
 }
