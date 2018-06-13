@@ -5,7 +5,7 @@ import Level from "@/components/Level"
 
 Vue.use(Router)
 export default new Router({
-    mode: "history",
+    mode: "hash",
     routes: [
         {
             path: "/",
